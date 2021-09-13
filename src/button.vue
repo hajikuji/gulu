@@ -1,10 +1,10 @@
 <template>
-    <button class="g-button" :class="{ [`icon-${iconPosition}`]: true }">
-      <svg v-if="icon" class="icon"><use :xlink:href="`#i-${icon}`"></use></svg>
-      <div class="content">
-        <slot />
-      </div>
-    </button>
+  <button class="g-button" :class="{ [`icon-${iconPosition}`]: true }">
+    <svg v-if="icon" class="icon"><use :xlink:href="`#i-${icon}`"></use></svg>
+    <div class="content">
+      <slot />
+    </div>
+  </button>
 </template>
 
 <script>
@@ -16,7 +16,10 @@ export default {
     },
     iconPosition: {
       type: String,
-      default: "",
+      default: "left",
+      validator: (val) => {
+        return val === "left" || val === "right";
+      },
     },
   },
 };
@@ -34,6 +37,7 @@ export default {
   vertical-align: middle;
   align-items: center;
   justify-content: center;
+
   &:hover {
     border-color: var(--border-color-hover);
   }
