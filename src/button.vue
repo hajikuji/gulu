@@ -1,6 +1,6 @@
 <template>
   <button class="g-button" :class="{ [`icon-${iconPosition}`]: true }">
-    <Icon v-if="icon" :name="icon"></Icon>
+    <Icon class="icon" v-if="icon" :name="icon"></Icon>
     <div class="content">
       <slot />
     </div>
@@ -41,6 +41,7 @@ export default {
   vertical-align: middle;
   align-items: center;
   justify-content: center;
+  line-height: 1;
 
   &:hover {
     border-color: var(--border-color-hover);
