@@ -18,6 +18,7 @@
             --font-size: 14px;
             --button-bg: #fff;
             --button-active-bg: #eee;
+            --button-hover-color: #f10;
             --border-radius: 4px;
             --color: #999;
             --border-color: #999;
@@ -29,12 +30,19 @@
 
 <body>
     <div id="app">
-        <g-button icon="download">按钮</g-button>
-        <g-button icon="setting" icon-position="right">测试</g-button>
+        <g-button icon="download" :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
+        <g-button icon="setting" loading icon-position="right">测试</g-button>
         <g-button icon="setting" icon-position="left">测试</g-button>
+
+        <g-button-group>
+            <g-button icon="left">上一页</g-button>
+            <g-button>更多</g-button>
+            <g-button icon="right" icon-position="right">下一页</g-button>
+        </g-button-group>
+
     </div>
     <script src="./src/app.js"></script>
-    <script src="//at.alicdn.com/t/font_2810269_bytejr1xmju.js"></script>
+    <script src="//at.alicdn.com/t/font_2810269_4scu7ochvs.js"></script>
 </body>
 
 </html>
